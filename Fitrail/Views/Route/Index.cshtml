@@ -1,0 +1,104 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   
+
+
+}
+
+<script type="text/javascript">
+    //alert("HERE");
+
+    //map.addEventListener(onclick, function (event) {
+    //    var marker = new google.maps.Marker({
+    //        position: event.latLng,
+    //        map: map
+    //    });
+    //});
+    
+</script>
+<legend>Create Your Route</legend>
+<div class="row">
+    <div class="col-lg-6">
+        
+        <form class="form-horizontal" method="post" name="Route">
+            <fieldset>
+                
+                <div class="form-group">
+                    <label name="lat" for="lat" class="col-lg-2 control-label">Latitude</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="lat" placeholder="Latitude">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label name="lon" for="lon" class="col-lg-2 control-label">Longitude</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="lon" placeholder="Longitude">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Lap_mode" class="col-lg-2 control-label">Lap Mode</label>
+                    <div class="col-lg-10">
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="Lap_mode"> 
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="activity" class="col-lg-2 control-label">Activity</label>
+                    <div class="col-lg-10">
+                        <select class="form-control" id="activity">
+                            <option>Walk</option>
+                            <option>Run</option>
+                            <option>Bike Ride</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="level" class="col-lg-2 control-label">Level</label>
+                    <div class="col-lg-10">
+                        <select class="form-control" id="level">
+                            <option>Basic</option>
+                            <option>Intermediate</option>
+                            <option>Expert</option>
+                        </select>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label name="Duration" for="duration" class="col-lg-2 control-label">Duration</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="duration" placeholder="Duration">
+                    </div>
+                    OR
+                    <label name="Distance" for="distance" class="col-md-2 control-label">Distance</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="distance" placeholder="Distance">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+    <div class="col-lg-6">
+        
+        <div id="map"></div>
+    </div>
+</div>
+
+
+
