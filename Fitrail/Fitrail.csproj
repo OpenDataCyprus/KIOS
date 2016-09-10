@@ -209,6 +209,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\cover.jpg" />
+    <Content Include="Content\cover_cropped.jpg" />
+    <Content Include="Content\cover_s.jpg" />
     <Content Include="Content\trailTroodos.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
