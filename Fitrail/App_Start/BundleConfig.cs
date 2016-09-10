@@ -29,6 +29,9 @@ namespace Fitrail
             bundles.Add(new StyleBundle("~/bundles/gmap").Include(
                       //"~/Scripts/route1.json",
                       "~/Scripts/gmap_render.js"));
+            bundles.Add(new StyleBundle("~/bundles/gmap2").Include(
+                      //"~/Scripts/route1.json",
+                      "~/Scripts/gmap_render2.js"));
 
 
         }

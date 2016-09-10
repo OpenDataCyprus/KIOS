@@ -209,9 +209,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\loopyDB.mdf" />
+    <Content Include="App_Data\loopyDB_log.ldf">
+      <DependentUpon>loopyDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\cover.jpg" />
     <Content Include="Content\cover_cropped.jpg" />
     <Content Include="Content\cover_s.jpg" />
+    <Content Include="Content\cover_v2.jpg" />
+    <Content Include="Content\cover_v3.jpg" />
     <Content Include="Content\trailTroodos.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -231,6 +237,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gmap.js" />
     <Content Include="Scripts\gmap_render.js" />
+    <Content Include="Scripts\gmap_render2.js" />
     <Content Include="Scripts\gmap_util.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -283,9 +290,7 @@
     <Content Include="Views\Route\Index" />
     <Content Include="Views\Route\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
