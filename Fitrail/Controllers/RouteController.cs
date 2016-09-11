@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace Fitrail.Controllers
 {
     public class RouteController : Controller
@@ -11,6 +12,34 @@ namespace Fitrail.Controllers
         // GET: Route
         public ActionResult Index()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(string level)
+        {
+            if (level=="Basic")
+            {
+                return RedirectToAction("Submitted");
+            }else if (level == "Expert")
+            {
+                return RedirectToAction("SubmittedExpert");
+            }
+            else
+            {
+                return RedirectToAction("SubmittedExpert");
+            }
+        }
+        //[HttpPost]
+        public ActionResult Submitted()
+        {
+            ViewBag.Message = "Submitted";
+            return View();
+        }
+
+        public ActionResult SubmittedExpert()
+        {
+            ViewBag.Message = "SubmittedExpert";
             return View();
         }
 

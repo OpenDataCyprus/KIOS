@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Your Route, Basic, 50 mins";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<legend>Your Route</legend>
+<div id="map"></div>
+<script type="text/javascript">
+    var map;
+    var marker, i;
+    var latlng = new google.maps.LatLng(35.167460, 33.367883);
+    var myOptions = {
+        zoom: 15,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map"), myOptions);
+    var route = [
+        [35.1705,33.3599],
+        [35.1702,33.3610],
+        [35.1701,33.3654],
+        [35.1702,33.3610],
+        [35.1705,33.3599]
+    ];
+    var polylinenew = new google.maps.Polyline({
+        //path: route,
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+    });
+    //polylinenew.setMap(map);
+    for (i = 0; i < route.length; i++) {
+        //alert(parks[i][0]);
+        var path = polylinenew.getPath();
+
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(route[i][0], route[i][1]),
+            map: map//,
+        });
+        path.push(new google.maps.LatLng(route[i][0], route[i][1]));
+        polylinenew.setMap(map);
+
+        //alert(typeof (marker));
+        //google.maps.event.addListener(marker, 'click', (function (marker, i) {
+        //    return function () {
+        //        //infowindow.setContent(parks[i][0]);
+        //        infowindow.open(map, marker);
+        //    };
+        //})(marker, i));
+    }
+    
+    
+</script>
+

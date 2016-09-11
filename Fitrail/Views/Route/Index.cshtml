@@ -19,7 +19,8 @@
 <legend>Create Your Route</legend>
 <div class="row">
     <div class="col-lg-6">
-        
+        @using (Html.BeginForm("Index", "Route", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
         <form class="form-horizontal" method="post" name="Route">
             <fieldset>
                 
@@ -62,10 +63,11 @@
                 <div class="form-group">
                     <label for="level" class="col-lg-2 control-label">Level</label>
                     <div class="col-lg-10">
-                        <select class="form-control" id="level">
+                        <select class="form-control" id="level" onsubmit="" >
+                            <option>Expert</option>
                             <option>Basic</option>
                             <option>Intermediate</option>
-                            <option>Expert</option>
+                            
                         </select>
 
                     </div>
@@ -74,7 +76,7 @@
                 <div class="form-group">
                     <label name="Duration" for="duration" class="col-lg-2 control-label">Duration</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="duration" placeholder="Duration">
+                        <input type="text" class="form-control" id="duration" placeholder="Duration" value="50">
                     </div>
                     OR
                     <label name="Distance" for="distance" class="col-md-2 control-label">Distance</label>
@@ -82,16 +84,31 @@
                         <input type="text" class="form-control" id="distance" placeholder="Distance">
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="through_parks" class="col-lg-2 control-label">Through Parks</label>
+                    <div class="col-lg-10">
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="through_parks">
+                            </label>
+                        </div>
+                    </div>
+                </div>
 
 
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
                         <button type="reset" class="btn btn-default">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                         @*<a href="~/Route/Submitted" class="btn btn-primary" >Submit</a>*@ 
+                        <button type="submit" value="Send" class="btn btn-primary">Submit</button>
+                        
                     </div>
                 </div>
             </fieldset>
         </form>
+        }
+
 
     </div>
     <div class="col-lg-6">

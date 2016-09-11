@@ -202,6 +202,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RouteViewModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -289,6 +290,8 @@
     <Content Include="Scripts\route1.json" />
     <Content Include="Views\Route\Index" />
     <Content Include="Views\Route\Index.cshtml" />
+    <Content Include="Views\Route\Submitted.cshtml" />
+    <Content Include="Views\Route\SubmittedExpert.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
