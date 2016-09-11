@@ -35,7 +35,7 @@ function InitializeMap() {
         [35.17439,33.392808],
         [35.168536,33.365497],
     ];
-    alert("HERE GODDAMMIT!");
+    //alert("HERE GODDAMMIT!");
     var latlng = new google.maps.LatLng(35.133712, 33.388817);
     var myOptions = {
         zoom: 12,

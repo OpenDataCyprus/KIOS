@@ -9,7 +9,7 @@
 <script type="text/javascript">
     var map;
     var marker, i;
-    var latlng = new google.maps.LatLng(35.167460, 33.367883);
+    var latlng = new google.maps.LatLng(35.1720, 33.3650);
     var myOptions = {
         zoom: 15,
         center: latlng,
@@ -17,11 +17,16 @@
     };
     map = new google.maps.Map(document.getElementById("map"), myOptions);
     var route = [
-        [35.1705,33.3599],
-        [35.1702,33.3610],
-        [35.1701,33.3654],
-        [35.1702,33.3610],
-        [35.1705,33.3599]
+        [35.1720,33.3650],
+        [35.1717,33.3649],
+        [35.1714,33.3647],
+        [35.1717,33.3634],
+        [35.1721,33.3636],
+        [35.1720,33.3641],
+        [35.1718,33.3641],
+        [35.1717,33.3644],
+        [35.1717,33.3649],
+        [35.1720,33.3650]
     ];
     var polylinenew = new google.maps.Polyline({
         //path: route,

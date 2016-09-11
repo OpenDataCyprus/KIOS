@@ -76,7 +76,7 @@
                 <div class="form-group">
                     <label name="Duration" for="duration" class="col-lg-2 control-label">Duration</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="duration" placeholder="Duration" value="50">
+                        <input type="text" class="form-control" id="duration" placeholder="Duration" value="120">
                     </div>
                     OR
                     <label name="Distance" for="distance" class="col-md-2 control-label">Distance</label>
@@ -100,8 +100,9 @@
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
                         <button type="reset" class="btn btn-default">Cancel</button>
-                         @*<a href="~/Route/Submitted" class="btn btn-primary" >Submit</a>*@ 
-                        <button type="submit" value="Send" class="btn btn-primary">Submit</button>
+                         <a href="~/Route/Submitted" class="btn btn-primary" >Sub</a> 
+                        <a href="~/Route/SubmittedExpert" class="btn btn-primary">mit</a> 
+                        @*<button type="submit" value="Send" class="btn btn-primary">Submit</button>*@
                         
                     </div>
                 </div>
@@ -118,4 +119,65 @@
 </div>
 
 
+<script type="text/javascript">
+    function InitializeMap() {
+        var latlng = new google.maps.LatLng(35.173335, 33.362326);
+        var myOptions = {
+            zoom: 18,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map"), myOptions);
+        //map.data.loadGeoJson('/Scripts/route1.json');
+        //data = JSON.parse('route1.json');
+        //console.log(data.name);
+        //alert("HERE");
+        //var marker;// = new google.maps.Marker({
+        //    position: latlng,
+        //    map: map
+        //});
+        var markersArray = [];
+        google.maps.event.addListener(map, 'click', function (event) {
+            //if(typeof marker =='undefined'){
+            //     marker = new google.maps.Marker({
+            //        position: event.latLng,
+            //        map: map
+            //    });
+            //} else {
+            //if (marker) {
+            //    deleteOver
+            //    marker = marker.setPosition(event.latLng);
+            //} else {
+            //    marker = new google.maps.Marker({
+            //        position: latlng,
+            //        map: map
+            //    });
+            //}
 
+            //}
+
+            if (markersArray.length != 0) {
+                for (var i = 0; i < markersArray.length; i++) {
+                    markersArray[i].setMap(null);
+                }
+                markersArray.length = 0;
+                markersArray = [];
+            }
+            var marker = new google.maps.Marker({
+                position: event.latLng,
+                map: map
+            });
+            markersArray.push(marker);
+            //$("#lat").empty();
+            //$("#lat").append(event.latLng.lat());
+            document.getElementById('lat').value = event.latLng.lat();
+            document.getElementById('lon').value = event.latLng.lng();
+
+
+
+        });
+    }
+
+    //markersArray = [];
+    window.onload = InitializeMap;
+</script>
